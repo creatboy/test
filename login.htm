@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" >
+<html>
+<head>
+<meta charset="utf-8">
+<title>展示登陆页</title>
+<link rel="stylesheet" href="css/onepage-scroll.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/common.css"/>
+<style>
+.page1{ background-color: #fff;}
+.page2{ background-color: #fff;}
+.page3{ background-color: #277ea7;}
+.page4{ background-color: #2294c9;}
+</style>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.onepage-scroll.min.js"></script>
+<!--全屏滚动获取js-->
+<script type="text/javascript">
+$(function(){
+	$('.main').onepage_scroll({
+		sectionContainer: '.page'
+	});
+});
+</script>
+<!--弹窗登录js获取表-->
+<script type="text/javascript">
+var w,h,className;
+function getSrceenWH(){
+	w = $(window).width();
+	h = $(window).height();
+	$('#dialogBg').width(w).height(h);
+}
+window.onresize = function(){  
+	getSrceenWH();
+}  
+$(window).resize();  
+$(function(){
+	getSrceenWH();	
+	//显示弹框
+	$('.login a').click(function(){
+		className = $(this).attr('class');
+		$('#dialogBg').fadeIn(300);
+		$('#dialog').removeAttr('class').addClass('animated '+className+'').fadeIn();
+	});
+	//关闭弹窗
+	$('.claseDialogBtn').click(function(){
+		$('#dialogBg').fadeOut(300,function(){
+			$('#dialog').addClass('bounceOutUp').fadeOut();
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">	
+	<div class="box">
+		<div id="dialogBg"></div>
+		<div id="dialog" class="animated">
+	    	<div class="login_title"><img src="images/logonh.png" width="528" height="56"></div>
+        	<a href="javascript:;" class="claseDialogBtn"><img src="images/close.png" width="34" height="34"></a>
+			<form action="" method="post" >
+				<ul class="login_input">
+        			<li class="admin"><input value="请输入用户名"></li>
+           			<li class="password"><input value="情输入密码" type="password"></li>
+            		<li class="confirm">
+            			<ul id="form1" runat="server" onsubmit="validateCode()">
+                			<li class="confirm_in">
+               					<input value="请输入验证码">
+               				<div class="code" id="checkCode" onclick="createCode()" ></div>
+                			</li>	
+                		</ul>
+                	</li>
+               		<li class="login_button"><a><input type="submit" value=""></a></li>
+                </ul>
+			</form>
+		</div>
+	</div>	
+</div>
+<nav>
+	<div class="nav_main">
+		<h1 class="logo"><a><img src="images/logo.png" width="178" height="104"></a></h1>
+		<div class="logo_word"><img src="images/logo_word.png" width="320" height="48"></div>
+		<div class="login"><a href="javascript:;" class="bounceInDown"><img src="images/login.png" width="112" height="52"></a></div>
+	</div>
+</nav>
+<div class="main">
+	<div class="page page1">
+    	<div class="banner"><img ></div>
+	</div>
+	<div class="page page2">
+		<div class="contenta">
+    	<div class="content_detail">
+        	<h3>大数据云管理平台</h3>
+            <p>作为针对大规模数据分析场景所设计的商用大数据系列产品，航天西塔CDH的大数据平台提供业界最强的集群能力，单集群规模高达10000个节
+点，而且支持多集群部署；提供全数据生命周期的处理能力，涵盖数据采集、交换、存储、处理、安全、数据可视化到业务数据应用的全闭环数
+据处理流程；针对不同客户场景....</p>
+            <img src="images/one.png" >
+        </div>
+    </div>
+	</div>
+	<div class="page page3">
+		<div class="contentb">
+    	<div class="content_detail">
+        	<h3>完善安全的技术流程</h3>
+            <p>作为针对大规模数据分析场景所设计的商用大数据系列产品，航天西塔CDH的大数据平台提供业界最强的集群能力，单集群规模高达10000个节
+点，而且支持多集群部署；提供全数据生命周期的处理能力，涵盖数据采集、交换、存储、处理、安全、数据可视化到业务数据应用的全闭环数
+据处理流程；针对不同客户场景....</p>
+            <img src="images/two.png" >
+        </div>
+    </div>
+	</div>
+	<div class="page page4">
+		<div class="contentc">
+    	<div class="content_detail">
+        	<h3>更加优秀的产品特色</h3>
+            <p>作为针对大规模数据分析场景所设计的商用大数据系列产品，航天西塔CDH的大数据平台提供业界最强的集群能力，单集群规模高达10000个节
+点，而且支持多集群部署；提供全数据生命周期的处理能力，涵盖数据采集、交换、存储、处理、安全、数据可视化到业务数据应用的全闭环数
+据处理流程；针对不同客户场景....</p>
+            <ul class="special">
+            	<li class="icona"><a href="#"></a>安全性</li>
+                <li class="iconb"><a href="#"></a>可编辑性</li>
+                <li class="iconc"><a href="#"></a>高效性</li>
+            </ul>
+        </div>
+    </div>
+	</div>
+</div>
+</body>
+</html>
+
